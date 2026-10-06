@@ -17,7 +17,7 @@ export function GithubIcon({ className = "w-4 h-4" }: { className?: string }) {
   );
 }
 
-export function LinkedinIcon({ className = "w-4 h-4" }: { className?: string }) {
+export function FacebookIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -28,14 +28,12 @@ export function LinkedinIcon({ className = "w-4 h-4" }: { className?: string }) 
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-      <rect width="4" height="12" x="2" y="9" />
-      <circle cx="4" cy="4" r="2" />
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
     </svg>
   );
 }
 
-export function TwitterIcon({ className = "w-4 h-4" }: { className?: string }) {
+export function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -46,7 +44,38 @@ export function TwitterIcon({ className = "w-4 h-4" }: { className?: string }) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
+
+export function LineIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M19.365 9.863c.349.004.63.285.63.631 0 .345-.281.63-.63.63h-2.19v1.56h2.19c.349 0 .63.285.63.63 0 .349-.281.63-.63.63h-2.82c-.349 0-.63-.281-.63-.63V7.64c0-.349.281-.63.63-.63h2.82c.349 0 .63.281.63.63 0 .346-.281.63-.63.63h-2.19v1.593h2.19zm-5.85 3.451c0 .349-.281.63-.63.63-.349 0-.63-.281-.63-.63V7.64c0-.349.281-.63.63-.63.349 0 .63.281.63.63v5.674zm-2.52 0c0 .248-.145.474-.367.574-.105.045-.218.068-.333.068-.138 0-.276-.034-.398-.109l-2.61-1.635v1.102c0 .349-.281.63-.63.63-.349 0-.63-.281-.63-.63V7.64c0-.248.145-.474.367-.574.222-.098.481-.053.664.109l2.61 1.635V7.64c0-.349.281-.63.63-.63.349 0 .63.281.63.63v5.674zm-6.3-5.674v5.674c0 .349-.281.63-.63.63-.349 0-.63-.281-.63-.63V7.64c0-.349.281-.63.63-.63.349 0 .63.281.63.63zm17.305 4.36c0-4.836-4.94-8.77-11-8.77S0 7.64 0 12.476c0 4.336 3.842 7.974 9.034 8.63.352.076.83.232.951.533.109.27.071.694.035.967-.058.44-.271 1.72-.294 1.86-.041.248-.192.97.838.529 1.03-.44 5.568-3.278 7.597-5.612 1.485-1.745 2.839-4.007 2.839-6.523z"/>
+    </svg>
+  );
+}
+
+export function MailIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="16" x="2" y="4" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
     </svg>
   );
 }

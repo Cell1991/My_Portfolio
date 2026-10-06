@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowUp, Heart } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "./Icons";
+import { ArrowUp } from "lucide-react";
+import { GithubIcon, FacebookIcon, InstagramIcon, LineIcon, MailIcon } from "./Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 
 export default function Footer() {
@@ -40,11 +40,11 @@ export default function Footer() {
             <div className="flex items-center justify-center md:justify-start gap-2">
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
               <span className="font-mono text-sm font-bold text-white tracking-wider">
-                {PORTFOLIO_DATA.personal.name}
+                {PORTFOLIO_DATA.personal.displayName} ({PORTFOLIO_DATA.personal.name})
               </span>
             </div>
             <p className="text-xs text-neutral-400 mt-1 font-mono">
-              Designed & Engineered with Next.js 15 & Anime.js Vibes
+              Full Stack & Backend Systems Architect // Naresuan University
             </p>
           </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
           <div className="flex items-center gap-6 text-xs font-mono">
             <div className="px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-neutral-300 flex items-center gap-2">
               <span className="text-neutral-500">BANGKOK (UTC+7):</span>
-              <span className="text-cyan-400 font-bold">{time || "09:30:00"}</span>
+              <span className="text-cyan-400 font-bold">{time || "09:45:00"}</span>
             </div>
 
             <button
@@ -68,32 +68,56 @@ export default function Footer() {
 
         {/* Bottom Social & Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 font-mono">
-          <p>© {new Date().getFullYear()} {PORTFOLIO_DATA.personal.name}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {PORTFOLIO_DATA.personal.displayName}. All rights reserved.</p>
 
           <div className="flex items-center gap-4">
             <a
               href={PORTFOLIO_DATA.personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-cyan-400 transition-colors"
+              className="hover:text-cyan-400 transition-colors flex items-center gap-1"
+              title="GitHub"
             >
-              GitHub
+              <GithubIcon className="w-4 h-4" />
+              <span className="hidden sm:inline">GitHub</span>
             </a>
             <a
-              href={PORTFOLIO_DATA.personal.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-cyan-400 transition-colors"
+              href={`mailto:${PORTFOLIO_DATA.personal.email}`}
+              className="hover:text-cyan-400 transition-colors flex items-center gap-1"
+              title="Email"
             >
-              LinkedIn
+              <MailIcon className="w-4 h-4" />
+              <span className="hidden sm:inline">Email</span>
             </a>
             <a
-              href={PORTFOLIO_DATA.personal.twitter}
+              href={PORTFOLIO_DATA.personal.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-cyan-400 transition-colors"
+              className="hover:text-cyan-400 transition-colors flex items-center gap-1"
+              title="Facebook"
             >
-              Twitter / X
+              <FacebookIcon className="w-4 h-4" />
+              <span className="hidden sm:inline">Facebook</span>
+            </a>
+            <a
+              href={PORTFOLIO_DATA.personal.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cyan-400 transition-colors flex items-center gap-1"
+              title="Instagram"
+            >
+              <InstagramIcon className="w-4 h-4" />
+              <span className="hidden sm:inline">Instagram</span>
+            </a>
+            <a
+              href={PORTFOLIO_DATA.personal.line}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cyan-400 transition-colors flex items-center gap-1"
+              title="LINE"
+            >
+              <LineIcon className="w-4 h-4" />
+              <span className="hidden sm:inline">LINE</span>
             </a>
           </div>
         </div>

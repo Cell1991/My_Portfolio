@@ -190,10 +190,10 @@ export default function HeroSection() {
           className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-white/10 w-full max-w-4xl"
         >
           {[
-            { label: "Experience", value: "4+ Years" },
-            { label: "Production Apps", value: "25+ Deployed" },
-            { label: "Performance Score", value: "99/100" },
-            { label: "Code Quality", value: "Type-Safe 100%" },
+            { label: "Education", value: "B.Sc. CS @ NU" },
+            { label: "System Latency", value: "< 50ms Tick" },
+            { label: "AI Inference", value: "< 120ms ONNX" },
+            { label: "Database Form", value: "Strict 3NF" },
           ].map((stat, i) => (
             <div key={i} className="text-center">
               <p className="text-xl sm:text-2xl font-black text-white font-mono">{stat.value}</p>

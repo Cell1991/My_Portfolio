@@ -4,7 +4,7 @@ export interface Project {
   subtitle: string;
   description: string;
   tags: string[];
-  category: "Full Stack" | "Creative Dev" | "AI & Systems" | "Mobile";
+  category: "Full Stack" | "AI & Systems" | "Creative Dev" | "Database & APIs";
   gradient: string;
   stats: { label: string; value: string }[];
   demoUrl?: string;
@@ -14,7 +14,7 @@ export interface Project {
 
 export interface SkillCategory {
   title: string;
-  skills: { name: string; level: number; iconName?: string; color: string }[];
+  skills: { name: string; level: number; color: string }[];
 }
 
 export interface Experience {
@@ -28,117 +28,103 @@ export interface Experience {
 
 export const PORTFOLIO_DATA = {
   personal: {
-    name: "Sorawit (Cell)",
-    title: "Full-Stack Engineer & Creative Developer",
-    tagline: "Crafting High-Performance Web Systems & Fluid Digital Experiences",
-    bio: "Passionate developer focused on building scalable cloud architectures, interactive UI motion, and modern web applications with cutting-edge technologies.",
-    location: "Bangkok, Thailand",
-    status: "Available for ambitious projects",
-    email: "sorawit.cell@example.com",
+    name: "Thanaphat Chichu (Cell)",
+    displayName: "I'm Cell",
+    title: "Full Stack & Backend Systems Architect",
+    tagline: "Building High-Throughput Microservices, AI Pipelines & Fluid Modern Web Systems",
+    bio: "Computer Science graduate from Naresuan University specializing in low-latency async architectures, non-blocking WebSocket engines, ONNX AI inference pipelines, and scalable Next.js ecosystems.",
+    location: "Bangkok & Phitsanulok, Thailand",
+    status: "Active & Available for Ambitious Projects",
+    email: "celleb1991@gmail.com",
     github: "https://github.com/Cell1991",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
+    facebook: "https://www.facebook.com/cellz2505",
+    instagram: "https://www.instagram.com/cell.tnp",
+    line: "https://line.me/ti/p/~cellz05",
   },
 
   projects: [
     {
-      id: "project-nexus",
-      title: "Nexus Quantum AI",
-      subtitle: "Enterprise Agentic Automation Platform",
-      description: "Real-time AI workflow orchestration engine featuring multi-agent intelligence, low-latency streaming pipelines, and dynamic telemetry graphs.",
-      tags: ["Next.js 15", "TypeScript", "Python / FastAPI", "Kafka", "Tailwind CSS"],
-      category: "AI & Systems",
+      id: "project-crossword",
+      title: "Multiplayer Crossword Game",
+      subtitle: "Low-Latency WebSocket Room Orchestration & Heuristic Board Engine",
+      description: "Non-blocking multiplayer word strategy engine built on FastAPI & AsyncIO, maintaining sub-50ms synchronized game ticks across concurrent rooms with algorithmic 2D placement against 10,000+ curated word corpora.",
+      tags: ["FastAPI", "AsyncIO", "WebSockets", "JavaScript ES6+", "Docker Compose"],
+      category: "Full Stack",
       gradient: "from-cyan-500 to-blue-600",
       stats: [
-        { label: "Throughput", value: "10K req/s" },
-        { label: "Latency", value: "< 45ms" },
-        { label: "Active Nodes", value: "250+" },
+        { label: "Room Latency", value: "< 50ms" },
+        { label: "Word Corpus", value: "10K+ Words" },
+        { label: "Isolation", value: "Docker Mesh" },
       ],
-      demoUrl: "https://example.com",
-      githubUrl: "https://github.com/Cell1991",
+      demoUrl: "https://github.com/Cell1991/crossword-game",
+      githubUrl: "https://github.com/Cell1991/crossword-game",
       featured: true,
     },
     {
-      id: "project-synthwave",
-      title: "CyberWave Studio",
-      subtitle: "Interactive Web Audio & Visual Synthesizer",
-      description: "In-browser digital audio workstation with real-time waveform modulation, SVG particle reactive spectrums, and MIDI controller support.",
-      tags: ["Web Audio API", "React 19", "Anime.js", "Canvas 2D", "GLSL"],
-      category: "Creative Dev",
+      id: "project-stroke-scan",
+      title: "NU Stroke Scan",
+      subtitle: "AI-Powered Ischemic Stroke Detection & CT Segmentation Pipeline",
+      description: "Embedded ONNX Runtime inference service delivering high-throughput batch segmentation on CT/MRI scans in <120ms with interactive Next.js diagnostic dashboard, dynamic canvas masks, and zero-latency triage.",
+      tags: ["Next.js 14", "ONNX Runtime", "FastAPI", "Python", "Docker"],
+      category: "AI & Systems",
       gradient: "from-purple-500 to-pink-500",
       stats: [
-        { label: "Audio Engine", value: "32-bit DSP" },
-        { label: "Frame Rate", value: "60 FPS" },
-        { label: "Presets", value: "48+" },
+        { label: "Inference Time", value: "< 120ms" },
+        { label: "Diagnostic UI", value: "DICOM Canvas" },
+        { label: "Architecture", value: "Decoupled Compute" },
       ],
-      demoUrl: "https://example.com",
-      githubUrl: "https://github.com/Cell1991",
+      demoUrl: "https://github.com/Cell1991/nu-stroke-scan",
+      githubUrl: "https://github.com/Cell1991/nu-stroke-scan",
       featured: true,
     },
     {
-      id: "project-hyperflow",
-      title: "HyperFlow Cloud",
-      subtitle: "Distributed Microservices Control Plane",
-      description: "Modern cloud infrastructure dashboard providing real-time Kubernetes cluster monitoring, distributed tracing, and automated canary deployments.",
-      tags: ["Go", "Next.js", "Docker", "Kubernetes", "GraphQL"],
-      category: "Full Stack",
+      id: "project-wellness",
+      title: "Wellness Enterprise Hub",
+      subtitle: "Strict 3NF PostgreSQL Healthcare Platform & Observability",
+      description: "Fully normalized relational database architecture in PostgreSQL with zero data redundancy, strict foreign key referential integrity, automated Prisma ORM type generation, and real-time query load balancing.",
+      tags: ["PostgreSQL 3NF", "Prisma ORM", "Next.js", "TypeScript", "Tailwind CSS"],
+      category: "Database & APIs",
       gradient: "from-emerald-400 to-teal-600",
       stats: [
-        { label: "Uptime", value: "99.99%" },
-        { label: "Clusters", value: "120+" },
-        { label: "Cost Saved", value: "35%" },
+        { label: "Schema Form", value: "Strict 3NF" },
+        { label: "Redundancy", value: "0% Data Loss" },
+        { label: "Type Safety", value: "Prisma End-to-End" },
       ],
-      demoUrl: "https://example.com",
+      demoUrl: "https://github.com/Cell1991",
       githubUrl: "https://github.com/Cell1991",
       featured: true,
-    },
-    {
-      id: "project-pulse",
-      title: "PulsePay Terminal",
-      subtitle: "Zero-Knowledge Biometric Payment SDK",
-      description: "Ultra-secure fintech gateway supporting instantaneous cross-border settlement, hardware key authentication, and live fraud detection.",
-      tags: ["TypeScript", "Rust", "WebAuthn", "PostgreSQL", "Tailwind CSS"],
-      category: "Full Stack",
-      gradient: "from-amber-400 to-orange-600",
-      stats: [
-        { label: "Volume", value: "$12M+" },
-        { label: "Security", value: "ZK-Proof" },
-        { label: "Settlement", value: "Instant" },
-      ],
-      demoUrl: "https://example.com",
-      githubUrl: "https://github.com/Cell1991",
-      featured: false,
     },
   ] as Project[],
 
   skillCategories: [
     {
-      title: "Frontend & Creative UI",
+      title: "Frontend & Web Architecture",
       skills: [
-        { name: "React 19 / Next.js", level: 96, color: "#00f2fe" },
-        { name: "TypeScript", level: 94, color: "#3178c6" },
+        { name: "Next.js (App Router)", level: 95, color: "#00f2fe" },
+        { name: "React.js", level: 93, color: "#61dafb" },
+        { name: "TypeScript", level: 92, color: "#3178c6" },
         { name: "Tailwind CSS v4", level: 95, color: "#38bdf8" },
-        { name: "Anime.js / Motion", level: 92, color: "#ff007f" },
-        { name: "Canvas 2D / SVG Shaders", level: 88, color: "#a855f7" },
+        { name: "JavaScript ES6+", level: 94, color: "#f7df1e" },
       ],
     },
     {
-      title: "Backend & Systems",
+      title: "Backend & Systems Engineering",
       skills: [
-        { name: "Node.js / Express", level: 90, color: "#22c55e" },
-        { name: "Python / FastAPI", level: 88, color: "#eab308" },
-        { name: "PostgreSQL / Redis", level: 86, color: "#3b82f6" },
-        { name: "REST & GraphQL APIs", level: 92, color: "#ec4899" },
-        { name: "Docker & Cloud Deploy", level: 84, color: "#06b6d4" },
+        { name: "Python / FastAPI", level: 94, color: "#009688" },
+        { name: "AsyncIO & WebSockets", level: 92, color: "#ff6f00" },
+        { name: "RESTful APIs Architecture", level: 95, color: "#02569b" },
+        { name: "ONNX Runtime & AI Inference", level: 88, color: "#005ced" },
+        { name: "Node.js Ecosystem", level: 86, color: "#22c55e" },
       ],
     },
     {
-      title: "Architecture & Tools",
+      title: "Database, DevOps & Cloud",
       skills: [
-        { name: "System Design", level: 89, color: "#8b5cf6" },
-        { name: "Git / CI/CD Pipelines", level: 93, color: "#f97316" },
-        { name: "Performance Optimization", level: 94, color: "#10b981" },
-        { name: "Security & Auth (OAuth/JWT)", level: 87, color: "#6366f1" },
+        { name: "PostgreSQL (3NF Design)", level: 93, color: "#316192" },
+        { name: "Prisma ORM", level: 92, color: "#2d3748" },
+        { name: "Docker & Docker Compose", level: 91, color: "#2496ed" },
+        { name: "Linux, Bash & Git Workflow", level: 94, color: "#f97316" },
+        { name: "AWS Cloud Fundamentals", level: 85, color: "#ec4899" },
       ],
     },
   ] as SkillCategory[],
@@ -146,36 +132,25 @@ export const PORTFOLIO_DATA = {
   experiences: [
     {
       year: "2024 - Present",
-      role: "Lead Full-Stack Developer",
-      company: "Apex Digital Solutions",
-      description: "Architecting enterprise SaaS platforms and leading UI/UX motion design systems.",
+      role: "Full Stack & Backend Systems Architect",
+      company: "Independent & Open-Source Projects",
+      description: "Designing end-to-end architectures, high-performance async backends with FastAPI, and fluid Next.js frontend applications.",
       achievements: [
-        "Boosted core web vitals and overall page speed score to 99/100",
-        "Engineered real-time collaboration canvas serving 50k+ active monthly users",
+        "Architected multi-room WebSocket game server with sub-50ms tick rate",
+        "Engineered medical AI inference pipeline with ONNX Runtime & DICOM canvas visualization",
       ],
-      tech: ["Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Redis"],
+      tech: ["Next.js", "FastAPI", "Python", "TypeScript", "Docker", "PostgreSQL"],
     },
     {
-      year: "2022 - 2024",
-      role: "Senior Frontend Engineer",
-      company: "NovaTech Innovations",
-      description: "Spearheaded frontend architecture, micro-frontends, and interactive animation libraries.",
+      year: "Academic Journey",
+      role: "B.Sc. in Computer Science",
+      company: "Naresuan University",
+      description: "Focused on Software Engineering, Distributed Systems, Database 3NF Normalization, Algorithm Optimization, and Network Protocols.",
       achievements: [
-        "Reduced bundle size by 42% through lazy modular architecture",
-        "Built custom SVG visualization suite adopted across 6 internal tools",
+        "Specialized in Full Stack Development & Cloud Infrastructure",
+        "Built and defended production-grade engineering prototypes & microservices",
       ],
-      tech: ["React", "TypeScript", "Anime.js", "GraphQL", "Tailwind CSS"],
-    },
-    {
-      year: "2020 - 2022",
-      role: "Full-Stack Web Developer",
-      company: "Creative Matrix Lab",
-      description: "Developed bespoke client web applications with high-fidelity animations and responsive interfaces.",
-      achievements: [
-        "Delivered 18+ high-impact web applications for international clients",
-        "Awarded best UI Showcase of the Year 2021",
-      ],
-      tech: ["JavaScript", "HTML5/CSS3", "PHP", "MySQL", "GSAP"],
+      tech: ["Computer Science", "Database Systems", "Networking (TCP/IP)", "Algorithms"],
     },
   ] as Experience[],
 };

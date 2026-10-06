@@ -59,12 +59,12 @@ export default function Navbar() {
           </div>
           <div className="hidden sm:block">
             <div className="text-sm font-bold tracking-tight text-white flex items-center gap-1.5">
-              <span>{PORTFOLIO_DATA.personal.name}</span>
+              <span>I&apos;m Cell</span>
               <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
                 PRO
               </span>
             </div>
-            <p className="text-xs text-neutral-400 font-mono">Creative Full-Stack</p>
+            <p className="text-xs text-neutral-400 font-mono">Full Stack & Systems Architect</p>
           </div>
         </a>
 
