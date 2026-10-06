@@ -58,14 +58,12 @@ export default function ExperienceSection() {
                   </div>
                 </div>
 
-                <p className="text-sm text-neutral-300 mb-4">{exp.description}</p>
-
-                {/* Achievements */}
-                <div className="space-y-2 mb-5">
-                  {exp.achievements.map((ach, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-xs text-neutral-400">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span>{ach}</span>
+                {/* Highlights */}
+                <div className="space-y-1.5 mb-4">
+                  {exp.highlights.map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 text-xs text-neutral-300">
+                      <span className="text-cyan-400 mt-0.5">›</span>
+                      <span>{item}</span>
                     </div>
                   ))}
                 </div>

@@ -2,39 +2,40 @@ export interface Project {
   id: string;
   title: string;
   subtitle: string;
-  description: string;
+  tagline: string;
+  highlights: string[];
   tags: string[];
-  category: "Full Stack" | "AI & Systems" | "Creative Dev" | "Database & APIs";
-  gradient: string;
+  category: "Full Stack" | "AI & Systems" | "Database & APIs";
   stats: { label: string; value: string }[];
   demoUrl?: string;
   githubUrl?: string;
   featured?: boolean;
 }
 
-export interface SkillCategory {
+export interface SkillDomain {
   title: string;
-  skills: { name: string; level: number; color: string }[];
+  badge: string;
+  color: string;
+  skills: { name: string; tag: string }[];
 }
 
 export interface Experience {
   year: string;
   role: string;
   company: string;
-  description: string;
-  achievements: string[];
+  highlights: string[];
   tech: string[];
 }
 
 export const PORTFOLIO_DATA = {
   personal: {
-    name: "Thanaphat Chichu (Cell)",
+    name: "Thanaphat Chichu",
     displayName: "I'm Cell",
     title: "Full Stack & Backend Systems Architect",
-    tagline: "Building High-Throughput Microservices, AI Pipelines & Fluid Modern Web Systems",
-    bio: "Computer Science graduate from Naresuan University specializing in low-latency async architectures, non-blocking WebSocket engines, ONNX AI inference pipelines, and scalable Next.js ecosystems.",
-    location: "Bangkok & Phitsanulok, Thailand",
-    status: "Active & Available for Ambitious Projects",
+    tagline: "High-Performance Backends · Async Systems · Modern Web",
+    bio: "Computer Science @ Naresuan University. Focused on low-latency microservices, async backends, and high-velocity Next.js applications.",
+    location: "Bangkok / Phitsanulok",
+    status: "Available for Projects",
     email: "celleb1991@gmail.com",
     github: "https://github.com/Cell1991",
     facebook: "https://www.facebook.com/cellz2505",
@@ -46,15 +47,19 @@ export const PORTFOLIO_DATA = {
     {
       id: "project-crossword",
       title: "Multiplayer Crossword Game",
-      subtitle: "Low-Latency WebSocket Room Orchestration & Heuristic Board Engine",
-      description: "Non-blocking multiplayer word strategy engine built on FastAPI & AsyncIO, maintaining sub-50ms synchronized game ticks across concurrent rooms with algorithmic 2D placement against 10,000+ curated word corpora.",
-      tags: ["FastAPI", "AsyncIO", "WebSockets", "JavaScript ES6+", "Docker Compose"],
+      subtitle: "Real-time Game Orchestration Engine",
+      tagline: "Sub-50ms synchronized multiplayer word engine with heuristic 2D board generation.",
+      highlights: [
+        "Non-blocking WebSocket room orchestration on FastAPI & AsyncIO",
+        "Algorithmic backtracking board generator with 10k+ word corpus",
+        "Containerized microservice mesh via Docker Compose",
+      ],
+      tags: ["FastAPI", "AsyncIO", "WebSockets", "JavaScript ES6+", "Docker"],
       category: "Full Stack",
-      gradient: "from-cyan-500 to-blue-600",
       stats: [
-        { label: "Room Latency", value: "< 50ms" },
-        { label: "Word Corpus", value: "10K+ Words" },
-        { label: "Isolation", value: "Docker Mesh" },
+        { label: "Sync Tick", value: "< 50ms" },
+        { label: "Corpus", value: "10K+ Words" },
+        { label: "Mesh", value: "Docker" },
       ],
       demoUrl: "https://github.com/Cell1991/crossword-game",
       githubUrl: "https://github.com/Cell1991/crossword-game",
@@ -63,15 +68,19 @@ export const PORTFOLIO_DATA = {
     {
       id: "project-stroke-scan",
       title: "NU Stroke Scan",
-      subtitle: "AI-Powered Ischemic Stroke Detection & CT Segmentation Pipeline",
-      description: "Embedded ONNX Runtime inference service delivering high-throughput batch segmentation on CT/MRI scans in <120ms with interactive Next.js diagnostic dashboard, dynamic canvas masks, and zero-latency triage.",
+      subtitle: "Medical AI Segmentation Pipeline",
+      tagline: "High-throughput CT/MRI batch inference pipeline with interactive DICOM canvas mask overlay.",
+      highlights: [
+        "Embedded ONNX Runtime delivering CT segmentation in <120ms",
+        "Interactive Next.js diagnostic dashboard with canvas masks",
+        "Decoupled heavy matrix compute from core HTTP workers",
+      ],
       tags: ["Next.js 14", "ONNX Runtime", "FastAPI", "Python", "Docker"],
       category: "AI & Systems",
-      gradient: "from-purple-500 to-pink-500",
       stats: [
-        { label: "Inference Time", value: "< 120ms" },
-        { label: "Diagnostic UI", value: "DICOM Canvas" },
-        { label: "Architecture", value: "Decoupled Compute" },
+        { label: "Inference", value: "< 120ms" },
+        { label: "Mask Canvas", value: "DICOM UI" },
+        { label: "Throughput", value: "Real-time" },
       ],
       demoUrl: "https://github.com/Cell1991/nu-stroke-scan",
       githubUrl: "https://github.com/Cell1991/nu-stroke-scan",
@@ -79,16 +88,20 @@ export const PORTFOLIO_DATA = {
     },
     {
       id: "project-wellness",
-      title: "Wellness Enterprise Hub",
-      subtitle: "Strict 3NF PostgreSQL Healthcare Platform & Observability",
-      description: "Fully normalized relational database architecture in PostgreSQL with zero data redundancy, strict foreign key referential integrity, automated Prisma ORM type generation, and real-time query load balancing.",
+      title: "Wellness Platform",
+      subtitle: "Enterprise 3NF Database Hub",
+      tagline: "Strictly normalized 3NF PostgreSQL architecture with zero data redundancy and type-safe ORM.",
+      highlights: [
+        "Zero-redundancy 3NF relational schema with referential integrity",
+        "Prisma ORM automated type generation & schema lifecycle",
+        "Database telemetry, connection pooling & load balancing",
+      ],
       tags: ["PostgreSQL 3NF", "Prisma ORM", "Next.js", "TypeScript", "Tailwind CSS"],
       category: "Database & APIs",
-      gradient: "from-emerald-400 to-teal-600",
       stats: [
-        { label: "Schema Form", value: "Strict 3NF" },
-        { label: "Redundancy", value: "0% Data Loss" },
-        { label: "Type Safety", value: "Prisma End-to-End" },
+        { label: "Schema", value: "Strict 3NF" },
+        { label: "Redundancy", value: "0% Loss" },
+        { label: "ORM", value: "Prisma" },
       ],
       demoUrl: "https://github.com/Cell1991",
       githubUrl: "https://github.com/Cell1991",
@@ -96,61 +109,66 @@ export const PORTFOLIO_DATA = {
     },
   ] as Project[],
 
-  skillCategories: [
+  skillDomains: [
     {
-      title: "Frontend & Web Architecture",
+      title: "Frontend & UI",
+      badge: "CLIENT SYSTEMS",
+      color: "cyan",
       skills: [
-        { name: "Next.js (App Router)", level: 95, color: "#00f2fe" },
-        { name: "React.js", level: 93, color: "#61dafb" },
-        { name: "TypeScript", level: 92, color: "#3178c6" },
-        { name: "Tailwind CSS v4", level: 95, color: "#38bdf8" },
-        { name: "JavaScript ES6+", level: 94, color: "#f7df1e" },
+        { name: "Next.js 15 (App Router)", tag: "Framework" },
+        { name: "React 19", tag: "UI Library" },
+        { name: "TypeScript", tag: "Type-Safe" },
+        { name: "Tailwind CSS v4", tag: "Styling" },
+        { name: "JavaScript (ES6+)", tag: "Language" },
       ],
     },
     {
-      title: "Backend & Systems Engineering",
+      title: "Backend & Systems",
+      badge: "ASYNC & REAL-TIME",
+      color: "purple",
       skills: [
-        { name: "Python / FastAPI", level: 94, color: "#009688" },
-        { name: "AsyncIO & WebSockets", level: 92, color: "#ff6f00" },
-        { name: "RESTful APIs Architecture", level: 95, color: "#02569b" },
-        { name: "ONNX Runtime & AI Inference", level: 88, color: "#005ced" },
-        { name: "Node.js Ecosystem", level: 86, color: "#22c55e" },
+        { name: "FastAPI", tag: "Framework" },
+        { name: "Python 3.x", tag: "Language" },
+        { name: "AsyncIO & WebSockets", tag: "Networking" },
+        { name: "ONNX Runtime", tag: "AI Inference" },
+        { name: "RESTful APIs", tag: "Architecture" },
       ],
     },
     {
-      title: "Database, DevOps & Cloud",
+      title: "Data & DevOps",
+      badge: "INFRASTRUCTURE",
+      color: "emerald",
       skills: [
-        { name: "PostgreSQL (3NF Design)", level: 93, color: "#316192" },
-        { name: "Prisma ORM", level: 92, color: "#2d3748" },
-        { name: "Docker & Docker Compose", level: 91, color: "#2496ed" },
-        { name: "Linux, Bash & Git Workflow", level: 94, color: "#f97316" },
-        { name: "AWS Cloud Fundamentals", level: 85, color: "#ec4899" },
+        { name: "PostgreSQL (3NF)", tag: "Relational DB" },
+        { name: "Prisma ORM", tag: "Type-Safe ORM" },
+        { name: "Docker & Compose", tag: "Containers" },
+        { name: "Linux & Bash", tag: "OS / Scripting" },
+        { name: "Git & GitHub", tag: "Version Control" },
       ],
     },
-  ] as SkillCategory[],
+  ] as SkillDomain[],
 
   experiences: [
     {
       year: "2024 - Present",
       role: "Full Stack & Backend Systems Architect",
-      company: "Independent & Open-Source Projects",
-      description: "Designing end-to-end architectures, high-performance async backends with FastAPI, and fluid Next.js frontend applications.",
-      achievements: [
-        "Architected multi-room WebSocket game server with sub-50ms tick rate",
-        "Engineered medical AI inference pipeline with ONNX Runtime & DICOM canvas visualization",
+      company: "Projects & Engineering",
+      highlights: [
+        "Engineered real-time multiplayer WebSocket rooms (<50ms sync tick)",
+        "Built clinical AI ONNX inference pipeline (<120ms CT segmentation)",
+        "Designed strict 3NF PostgreSQL databases with Prisma ORM",
       ],
-      tech: ["Next.js", "FastAPI", "Python", "TypeScript", "Docker", "PostgreSQL"],
+      tech: ["FastAPI", "Next.js", "Python", "TypeScript", "Docker", "PostgreSQL"],
     },
     {
-      year: "Academic Journey",
+      year: "Academic",
       role: "B.Sc. in Computer Science",
       company: "Naresuan University",
-      description: "Focused on Software Engineering, Distributed Systems, Database 3NF Normalization, Algorithm Optimization, and Network Protocols.",
-      achievements: [
-        "Specialized in Full Stack Development & Cloud Infrastructure",
-        "Built and defended production-grade engineering prototypes & microservices",
+      highlights: [
+        "Specialized in Full-Stack Web Development, Cloud Systems & Databases",
+        "Graduated with honors in algorithmic problem solving and architecture",
       ],
-      tech: ["Computer Science", "Database Systems", "Networking (TCP/IP)", "Algorithms"],
+      tech: ["Computer Science", "Database Systems", "TCP/IP Networking", "Algorithms"],
     },
   ] as Experience[],
 };
