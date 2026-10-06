@@ -1,84 +1,122 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Cpu, Wrench, ShieldCheck, Flame } from "lucide-react";
-import { PORTFOLIO_DATA } from "@/data/portfolioData";
+import { Code2, Server, Database, CheckCircle2, Layers } from "lucide-react";
 
 export default function SkillsSection() {
+  const skillDomains = [
+    {
+      title: "Frontend & Client Engineering",
+      icon: Code2,
+      tag: "UI & INTERACTION",
+      description: "Building responsive, accessible, and high-performance user interfaces with modern React paradigms.",
+      techs: [
+        { name: "Next.js 15 (App Router)", highlight: true },
+        { name: "React 19", highlight: true },
+        { name: "TypeScript", highlight: true },
+        { name: "Tailwind CSS v4", highlight: false },
+        { name: "Framer Motion", highlight: false },
+        { name: "JavaScript (ES6+)", highlight: false },
+      ],
+    },
+    {
+      title: "Backend & Systems Architecture",
+      icon: Server,
+      tag: "ASYNC & REAL-TIME",
+      description: "Engineering non-blocking APIs, low-latency WebSocket rooms, and machine learning inference services.",
+      techs: [
+        { name: "Python 3.x", highlight: true },
+        { name: "FastAPI", highlight: true },
+        { name: "AsyncIO & WebSockets", highlight: true },
+        { name: "RESTful API Design", highlight: false },
+        { name: "ONNX Runtime (AI)", highlight: false },
+        { name: "Node.js", highlight: false },
+      ],
+    },
+    {
+      title: "Database, DevOps & Infrastructure",
+      icon: Database,
+      tag: "PERSISTENCE & DEPLOY",
+      description: "Ensuring zero-redundancy 3NF schemas, automated containerized microservices, and reliable workflows.",
+      techs: [
+        { name: "PostgreSQL (3NF)", highlight: true },
+        { name: "Prisma ORM", highlight: true },
+        { name: "Docker & Docker Compose", highlight: true },
+        { name: "Linux & Bash Scripting", highlight: false },
+        { name: "Git & CI/CD", highlight: false },
+        { name: "AWS Fundamentals", highlight: false },
+      ],
+    },
+  ];
+
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-grid-pattern bg-[#07080d]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="skills" className="py-24 relative overflow-hidden bg-[#07080d] border-t border-white/5">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/30 text-xs font-mono mb-3">
-            <Code2 className="w-3.5 h-3.5" />
-            <span>CAPABILITIES & ARSENAL</span>
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/[0.04] text-neutral-400 border border-white/10 text-xs font-mono mb-3">
+            <Layers className="w-3.5 h-3.5 text-cyan-400" />
+            <span>TECHNICAL DOMAINS</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
-            Technical Stack Matrix
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+            Architecture &amp; Tooling
           </h2>
-          <p className="text-sm sm:text-base text-neutral-400 mt-3">
-            Rigorous foundations across frontend graphics, modern frameworks, backend distributed systems, and DevOps.
+          <p className="text-sm sm:text-base text-neutral-400 mt-2">
+            Selected stack focused on reliability, performance, and type-safety across the entire pipeline.
           </p>
         </div>
 
-        {/* Skill Matrix Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {PORTFOLIO_DATA.skillCategories.map((category, catIdx) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: catIdx * 0.15 }}
-              className="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
-                  <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                    {catIdx === 0 && <Flame className="w-5 h-5 text-cyan-400" />}
-                    {catIdx === 1 && <Cpu className="w-5 h-5 text-purple-400" />}
-                    {catIdx === 2 && <ShieldCheck className="w-5 h-5 text-emerald-400" />}
-                    <span>{category.title}</span>
-                  </h3>
-                  <span className="text-xs font-mono text-neutral-500">
-                    {category.skills.length} Techs
-                  </span>
-                </div>
-
-                {/* Skill Bars */}
-                <div className="space-y-5">
-                  {category.skills.map((skill) => (
-                    <div key={skill.name}>
-                      <div className="flex items-center justify-between text-xs font-mono mb-1.5">
-                        <span className="text-neutral-200 font-medium">{skill.name}</span>
-                        <span className="text-neutral-400">{skill.level}%</span>
-                      </div>
-                      <div className="w-full h-2 bg-neutral-900 rounded-full overflow-hidden border border-white/5">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                          className="h-full rounded-full"
-                          style={{
-                            backgroundColor: skill.color,
-                            boxShadow: `0 0 10px ${skill.color}80`,
-                          }}
-                        />
-                      </div>
+        {/* Skill Matrix Grid (Clean, No Fake % Bars) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {skillDomains.map((domain, index) => {
+            const Icon = domain.icon;
+            return (
+              <motion.div
+                key={domain.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="rounded-2xl p-6 bg-white/[0.02] border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-cyan-400">
+                      <Icon className="w-5 h-5" />
                     </div>
-                  ))}
-                </div>
-              </div>
+                    <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white/[0.03] text-neutral-400 border border-white/5">
+                      {domain.tag}
+                    </span>
+                  </div>
 
-              {/* Bottom tag */}
-              <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-neutral-500">
-                <span>Verified in Production</span>
-                <span className="text-cyan-400 font-semibold">Active Tier</span>
-              </div>
-            </motion.div>
-          ))}
+                  <h3 className="text-lg font-bold text-white mb-2">{domain.title}</h3>
+                  <p className="text-xs text-neutral-400 leading-relaxed mb-6">
+                    {domain.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {domain.techs.map((tech) => (
+                      <span
+                        key={tech.name}
+                        className={`text-xs font-mono px-3 py-1.5 rounded-lg border transition-colors ${
+                          tech.highlight
+                            ? "bg-cyan-500/10 text-cyan-300 border-cyan-500/25 font-semibold"
+                            : "bg-white/[0.03] text-neutral-300 border-white/[0.08]"
+                        }`}
+                      >
+                        {tech.name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-white/5 flex items-center gap-2 text-xs text-neutral-500 font-mono">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Production &amp; Research Proven</span>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

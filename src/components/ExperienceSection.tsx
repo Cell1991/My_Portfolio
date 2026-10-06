@@ -10,15 +10,15 @@ export default function ExperienceSection() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-pink-500/10 text-pink-400 border border-pink-500/30 text-xs font-mono mb-3">
-            <Briefcase className="w-3.5 h-3.5" />
-            <span>CAREER TRAJECTORY</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/[0.04] text-neutral-400 border border-white/10 text-xs font-mono mb-3">
+            <Briefcase className="w-3.5 h-3.5 text-purple-400" />
+            <span>BACKGROUND & MILESTONES</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
-            Experience & Journey
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+            Academic &amp; Engineering Path
           </h2>
-          <p className="text-sm sm:text-base text-neutral-400 mt-3">
-            Proven track record delivering scalable products and modern user experiences.
+          <p className="text-sm sm:text-base text-neutral-400 mt-2">
+            Foundations in Computer Science, Distributed Systems, and Modern Full-Stack Development.
           </p>
         </div>
 

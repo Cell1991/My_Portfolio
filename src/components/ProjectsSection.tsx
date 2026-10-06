@@ -9,7 +9,7 @@ import { PORTFOLIO_DATA, Project } from "@/data/portfolioData";
 export default function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
 
-  const categories = ["All", "Full Stack", "Creative Dev", "AI & Systems"];
+  const categories = ["All", "Full Stack", "AI & Systems", "Database & APIs"];
 
   const filteredProjects =
     activeCategory === "All"
