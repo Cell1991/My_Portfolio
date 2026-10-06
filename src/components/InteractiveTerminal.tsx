@@ -20,14 +20,12 @@ export default function InteractiveTerminal() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSent, setFormSent] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const terminalBottomRef = useRef<HTMLDivElement | null>(null);
-
-  const scrollToBottom = () => {
-    terminalBottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  const terminalBodyRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    scrollToBottom();
+    if (terminalBodyRef.current) {
+      terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;
+    }
   }, [history]);
 
   const handleCommand = (cmd: string) => {
@@ -153,7 +151,7 @@ export default function InteractiveTerminal() {
             </div>
 
             {/* Terminal Body */}
-            <div className="p-4 sm:p-5 font-mono text-xs overflow-y-auto flex-1 space-y-2 select-text">
+            <div ref={terminalBodyRef} className="p-4 sm:p-5 font-mono text-xs overflow-y-auto flex-1 space-y-2 select-text">
               {history.map((item, idx) => (
                 <div key={idx} className="leading-relaxed whitespace-pre-wrap">
                   {item.type === "system" && (
@@ -170,7 +168,6 @@ export default function InteractiveTerminal() {
                   )}
                 </div>
               ))}
-              <div ref={terminalBottomRef} />
             </div>
 
             {/* Terminal Input Bar */}
